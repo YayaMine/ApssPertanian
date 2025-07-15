@@ -1,5 +1,4 @@
 import 'package:appspertanian/Form/Log1.dart';
-import 'package:appspertanian/Form/Login.dart';
 import 'package:appspertanian/Form/Register.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,10 +17,14 @@ class _Screen2State extends State<Screen2> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Positioned(
+          Center(
             child: Container(
-              alignment: AlignmentDirectional.topEnd,
-              child: Image.asset('assets/images/Logo.png', height: 500),
+              alignment: AlignmentDirectional.topCenter,
+              child: Image.asset(
+                'assets/images/Logo.png',
+                height: MediaQuery.of(context).size.height * 0.5,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           Positioned(
@@ -31,23 +34,18 @@ class _Screen2State extends State<Screen2> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: Color(0xFF14A741),
+                color: const Color(0xFF14A741),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.2),
                     spreadRadius: 5,
                     blurRadius: 8,
-                    offset: Offset(5, 0),
+                    offset: const Offset(5, 0),
                   ),
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.only(
-                  // bottom: 100,
-                  top: 50,
-                  left: 40,
-                  right: 20,
-                ),
+                padding: const EdgeInsets.only(top: 50, left: 40, right: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -59,7 +57,6 @@ class _Screen2State extends State<Screen2> {
                         color: Colors.white,
                       ),
                     ),
-                    // SizedBox(height: 10),
                     Text(
                       'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, ',
                       style: GoogleFonts.poppins(
@@ -81,10 +78,9 @@ class _Screen2State extends State<Screen2> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Log1;
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => Log1()),
+                      MaterialPageRoute(builder: (context) => const Log1()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -100,13 +96,12 @@ class _Screen2State extends State<Screen2> {
                     style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(width: 30),
+                const SizedBox(width: 30),
                 ElevatedButton(
                   onPressed: () {
-                    Login;
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => Register()),
+                      MaterialPageRoute(builder: (context) => const Register()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

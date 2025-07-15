@@ -1,4 +1,6 @@
 import 'package:appspertanian/Screen/HomeP.dart';
+import 'package:appspertanian/Screen/LikePage.dart';
+import 'package:appspertanian/Screen/ProfilePage.dart';
 import 'package:appspertanian/Screen/chart.dart';
 import 'package:flutter/material.dart';
 
@@ -26,19 +28,11 @@ class _MainPageState extends State<MainPage> {
         case 1:
           return const Chart();
         case 2:
-          return Center(
-            child: Text(
-              'Profile Page',
-              style: TextStyle(fontSize: 32, color: Color(0xFF14A741)),
-            ),
-          );
+          return const LikePage();
+        case 3:
+          return const ProfilePage();
         default:
-          return Center(
-            child: Text(
-              'Whats Wrong',
-              style: TextStyle(fontSize: 32, color: Color(0xFF14A741)),
-            ),
-          );
+          return const Homep(); // Kembali ke Home jika ada kesalahan
       }
     }
 
